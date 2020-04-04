@@ -1,0 +1,24 @@
+{
+  "name": "vue-blurry-gallery",
+  "version": "1.0.3",
+  "description": "A easy gallery component for vue apps",
+  "main": "Gallery.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorianWenzel/vue-easy-gallery.git"
+  },
+  "author": "Florian Wenzel <mail@florian-wenzel.io> (https://florian-wenzel.io)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlorianWenzel/vue-easy-gallery/issues"
+  },
+  "homepage": "https://github.com/FlorianWenzel/vue-easy-gallery#readme",
+  "dependencies": {
+    "imagemagick": "^0.1.3",
+    "uuid": "^7.0.3",
+    "vue": "^2.6.11"
+  }
+}
