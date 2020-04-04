@@ -46,5 +46,5 @@ $ npm i vue-easy-gallery
 ```
 per-row: 3                  #amount of images per row
 images: []                  #the images to display
-options.border: 'default'   #border to seperate the images
+options.border: 'none'      #border to seperate the images
 ```
