@@ -18,5 +18,11 @@
   "homepage": "https://github.com/FlorianWenzel/vue-easy-gallery#readme",
   "dependencies": {
     "uuid": "^7.0.3"
-  }
+  },
+  "keywords": [
+    "vue",
+    "gallery",
+    "thumbnail",
+    "blurry"
+  ]
 }
