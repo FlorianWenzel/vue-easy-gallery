@@ -1,5 +1,5 @@
 # vue-easy-gallery
-A easy to use, beautiful gallery vue component.
+A easy to use, responsive gallery vue component. 
 ## Demo
 [Example Gallery](https://florianwenzel.github.io/)  
 [Example Code](https://github.com/FlorianWenzel/vue-easy-gallery/blob/master/example/GalleryDemo.vue)
@@ -42,9 +42,45 @@ $ npm i vue-easy-gallery
     }  
 </script>
 ```
-### Options
+## Attributes
+### per-row
+The amount of images per row
+```html
+<Gallery :images="images" :per-row="3"></Gallery>  
 ```
-per-row: 3                  #amount of images per row
-images: []                  #the images to display
-options.border: 'none'      #border to seperate the images
+### images
+the images to display
+```js
+images = [                              
+    {  
+        //[required] the source of the image
+        "src" : "https://myimage.url/img1.jpg",
+
+        //[required] the hight of the image, required 
+        "height" : 4013,  
+
+        //[required] the width of the image, required 
+        "width" : 3581,
+
+        //[recommended] a less detailed version of the image, will be displayed blurred during loading
+        //recommended size is less then 1kb, optional but recommended 
+        "thumbnail" : "https://myimage.url/img1thumb.jpg",
+
+        //[optional] Text, that will be displayed at the bottom of the image, optional
+        "text": "Lorem ipsum dolor sit amet"
+    },  
+];          
+```
+### options
+```js                           
+options = {
+    //the border around each image, can be used as padding
+    border: 'solid .5rem transparent',  //default: none
+    
+    //smoother transitions on window resize
+    smoothResize: false,                //default: false
+    
+    //When the image is clicked, the text is toggled visible/invisible
+    toggleTextOnClick: false            //default: false
+}
 ```

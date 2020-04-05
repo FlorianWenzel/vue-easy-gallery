@@ -1,7 +1,16 @@
 <template>
     <div style="width: 100%;">
         <label for="range">Images per Row: </label><input id="range" type="range" min="1" max="10" v-model="perRow">
-        <Gallery :images="images" :per-row="perRow" :options="options"></Gallery>
+        <label for="smooth">smoothResize: </label><input id="smooth" type="checkbox" v-model="options.smoothResize">
+        <label for="border">border: </label><input id="border" type="text" v-model="options.border">
+        <label for="toggle">toggleTextOnClick: </label><input id="toggle" type="checkbox" v-model="options.toggleTextOnClick">
+
+        <Gallery
+                :images="images"
+                :per-row="perRow"
+                :options="options"
+        >
+        </Gallery>
     </div>
 </template>
 <style scoped>
@@ -9,6 +18,7 @@
 </style>
 <script>
     import Gallery from "../Gallery";
+    //import Gallery from "vue-easy-gallery";
 
     export default {
         components: {Gallery},
@@ -16,7 +26,9 @@
             return {
                 perRow: 3,
                 options: {
-                    border: 'solid 1vw white'
+                    border: 'solid .5rem transparent',         //the border around each image, can be used as padding
+                    smoothResize: true,                 //smoother transitions on window resize
+                    toggleTextOnClick: true,            //When the image is clicked, the text is toggled visible/invisible
                 },
                 images: [
                     { height: 4160,
@@ -27,6 +39,7 @@
                             'https://florianwenzel.github.io/stock_images/thumbnails/low-angle-shot-of-a-building-of-ancient-architecture-3097592.jpg' },
                     { height: 2000,
                     width: 3000,
+                    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l",
                     src: 'https://florianwenzel.github.io/stock_images/white-concrete-houses-1531660.jpg',
                     thumbnail: 'https://florianwenzel.github.io/stock_images/thumbnails/white-concrete-houses-1531660.jpg' },
                     { height: 3078,
@@ -66,6 +79,7 @@
                         thumbnail: 'https://florianwenzel.github.io/stock_images/thumbnails/houses-near-hill-3352873.jpg' },
                     { height: 5320,
                         width: 3547,
+                        text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                         src: 'https://florianwenzel.github.io/stock_images/low-angle-shot-of-the-temple-732895.jpg',
                         thumbnail:
                             'https://florianwenzel.github.io/stock_images/thumbnails/low-angle-shot-of-the-temple-732895.jpg' },
@@ -89,6 +103,7 @@
                     { height: 6000,
                         width: 4000,
                         src: 'https://florianwenzel.github.io/stock_images/black-donkey-on-a-road-2409958.jpg',
+                        text: "Donkey.",
                         thumbnail: 'https://florianwenzel.github.io/stock_images/thumbnails/black-donkey-on-a-road-2409958.jpg' },
                     { height: 6000,
                         width: 4000,
