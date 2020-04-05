@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!resizing">
+    <div>
         <ImageRow @click="imageClick" class="postImageRow" :border-style="borderStyle" :width="width" :height="height" :key="amount" v-for="amount in amountOfRows" :images="images.slice((amount - 1) * perRow, ((amount) * perRow))" :amount="amount"></ImageRow>
     </div>
 </template>
@@ -15,8 +15,12 @@
                 this.openIndex = this.images.indexOf(image);
             },
             handleResize(){
-                this.width = this.$el.getBoundingClientRect().width;
-                this.height = this.$el.getBoundingClientRect().height;
+                if(this.resizeTimeout)
+                    clearTimeout(this.resizeTimeout);
+                this.resizeTimeout = setTimeout(() => {
+                    this.width = this.$el.getBoundingClientRect().width;
+                    this.height = this.$el.getBoundingClientRect().height;
+                }, 300)
             }
         },
         watch: {
@@ -32,7 +36,6 @@
                 opt: null,
                 width: 1000,
                 height: 1000,
-                resizing: false,
                 resizeTimeout: null,
                 borderStyle: 'none',
             }

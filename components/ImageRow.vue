@@ -1,8 +1,8 @@
 <template>
     <div  class="w-100 imagerow d-flex align-content-center">
         <div :key="index" :data-sub-html="image.text" :data-src="image.src" v-for="(image, index) in images" class="img-wrapper align-self-center overflow-hidden" :style="widths[index] + ' border: ' + borderStyle + ';'">
-            <img :src="image.thumbnail" :id="image.id" @click="click(image)" :alt="image.text ? image.text : ' '" class="h-100">
-            <img :src="image.src" @load="loadImage(image)" @click="click(image)" :style="getBackground(image)" :alt="image.text ? image.text : ' '" class="h-100"/>
+            <img :src="image.thumbnail" :id="image.id" @click="click(image)" :alt="image.text ? image.text : ' '" class="h-100 w-100">
+            <img :src="image.src" @load="loadImage(image)" @click="click(image)" :style="getBackground(image)" :alt="image.text ? image.text : ' '" class="h-100 w-100"/>
         </div>
     </div>
 </template>
@@ -35,9 +35,6 @@
 
                 const shrinkingFactor = screenWidthOfHighestRatio / imageWithHighestRatio.image.width;
                 let height = imageWithHighestRatio.image.height * shrinkingFactor;
-                if(height > window.innerHeight){
-                    height = window.innerHeight;
-                }
                 return 'height: ' + height + 'px; width: ' + in_percent + '%;';
             },
             click(image){
@@ -70,8 +67,8 @@
 </script>
 
 <style scoped>
-    .postImageRow>.img-wrapper {
-        border: solid thin white;
+    .img-wrapper{
+        transition: height .3s, width .3s;
     }
     img:hover{
         cursor: pointer;

@@ -16,7 +16,7 @@
             return {
                 perRow: 3,
                 options: {
-                    border: 'solid thin white'
+                    border: 'solid 1vw white'
                 },
                 images: [
                     { height: 4160,
