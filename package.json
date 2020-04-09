@@ -22,5 +22,8 @@
     "gallery",
     "thumbnail",
     "blurry"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "^2.0.4"
+  }
 }
