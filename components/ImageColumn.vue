@@ -60,7 +60,6 @@ export default {
     updateSizes() {
       this.size = [];
       for (const index in this.images) {
-        index;
         const { width, height } = this.images[index];
         const actualHeight = (this.width / this.amount / width) * height;
         this.size.push(actualHeight + "px");
