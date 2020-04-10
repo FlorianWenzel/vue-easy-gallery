@@ -25,7 +25,7 @@ $ npm i vue-easy-gallery
     :images="images"
     :per-row="3"
     :options="{border: 'solid thin white'}"
-  ></Gallery>
+  />
 </template>
 ```
 
